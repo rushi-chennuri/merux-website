@@ -60,11 +60,11 @@ const services = [
     title:   'Chatbot Development',
     short:   'AI-powered bots for customer support, lead capture and workflow automation — operating 24/7 without fatigue.',
     tags:    ['GPT-4', 'NLP', 'Automation', 'CRM Integration'],
-    accent:  'from-emerald-500 to-teal-500',
-    bg:      'bg-emerald-50',
-    ic:      'text-emerald-600',
-    border:  'hover:border-emerald-300',
-    grad:    'from-emerald-500 to-teal-600',
+    accent:  'from-brand-500 to-purple-500',
+    bg:      'bg-brand-50',
+    ic:      'text-brand-600',
+    border:  'hover:border-brand-300',
+    grad:    'from-brand-500 to-purple-600',
     overview: 'We build intelligent conversational agents that understand natural language, remember context and hand off to human agents seamlessly. Our bots are deeply integrated into your existing tools and workflows.',
     includes: [
       'Custom NLP pipeline trained on your business domain',
@@ -83,11 +83,11 @@ const services = [
     title:   'AI Integration',
     short:   'Embed machine learning and large language model capabilities into existing or new applications for smarter workflows.',
     tags:    ['OpenAI', 'LangChain', 'ML Models', 'Analytics'],
-    accent:  'from-amber-500 to-orange-500',
-    bg:      'bg-amber-50',
-    ic:      'text-amber-600',
-    border:  'hover:border-amber-300',
-    grad:    'from-amber-500 to-orange-600',
+    accent:  'from-purple-500 to-brand-500',
+    bg:      'bg-purple-50',
+    ic:      'text-purple-600',
+    border:  'hover:border-purple-300',
+    grad:    'from-purple-500 to-brand-600',
     overview: 'We make AI practical. Whether you need document intelligence, predictive analytics, image recognition or a custom LLM-powered feature, we integrate it cleanly into your product without disrupting what already works.',
     includes: [
       'Custom LLM fine-tuning on proprietary data',
@@ -106,11 +106,11 @@ const services = [
     title:   'Payment Gateway Integration',
     short:   'PCI-compliant, multi-currency payment flows that reduce drop-off and maximise conversion across all platforms.',
     tags:    ['Stripe', 'PayPal', 'Razorpay', 'Apple Pay'],
-    accent:  'from-rose-500 to-pink-500',
-    bg:      'bg-rose-50',
-    ic:      'text-rose-600',
-    border:  'hover:border-rose-300',
-    grad:    'from-rose-500 to-pink-600',
+    accent:  'from-brand-600 to-purple-600',
+    bg:      'bg-brand-50',
+    ic:      'text-brand-600',
+    border:  'hover:border-brand-300',
+    grad:    'from-brand-600 to-purple-600',
     overview: 'A clunky checkout loses sales. We engineer payment flows that feel effortless — covering every major provider, currency and method your customers expect, while keeping your platform fully PCI-DSS compliant.',
     includes: [
       'Stripe, PayPal, Razorpay, Square, Braintree integration',
@@ -129,11 +129,11 @@ const services = [
     title:   'Post-Delivery Support',
     short:   'Ongoing maintenance, security patches, performance monitoring and feature updates long after your product launches.',
     tags:    ['24/7 Monitoring', 'SLA', 'Bug Fixes', 'Upgrades'],
-    accent:  'from-cyan-500 to-sky-500',
-    bg:      'bg-cyan-50',
-    ic:      'text-cyan-600',
-    border:  'hover:border-cyan-300',
-    grad:    'from-cyan-500 to-sky-600',
+    accent:  'from-purple-500 to-brand-500',
+    bg:      'bg-purple-50',
+    ic:      'text-purple-600',
+    border:  'hover:border-purple-300',
+    grad:    'from-purple-500 to-brand-600',
     overview: 'We are not a build-and-disappear agency. Every product we ship enters a long-term care programme — monitored, maintained and continuously improved so your investment keeps paying off.',
     includes: [
       '24/7 uptime & performance monitoring',
@@ -301,9 +301,9 @@ export default function Services() {
                    color: '#7C3AED',
                    border: '1.5px solid transparent',
                    backgroundClip: 'padding-box',
-                   boxShadow: '0 0 0 1.5px #E91E8C',
+                   boxShadow: '0 0 0 1.5px #7C3AED',
                  }}>
-              <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#E91E8C' }} />
+              <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#2563EB' }} />
               What We Offer
             </div>
 
@@ -314,7 +314,7 @@ export default function Services() {
             {/* Gradient underline accent */}
             <div className="flex justify-center mb-5">
               <div className="h-1 w-20 rounded-full"
-                   style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }} />
+                   style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #A855F7)' }} />
             </div>
 
             <p className="text-slate-500 text-lg max-w-xl mx-auto">
@@ -330,12 +330,12 @@ export default function Services() {
               return (
                 <div
                   key={s.title}
-                  className="reveal group relative overflow-hidden cursor-pointer rounded-2xl p-8 flex flex-col"
+                  className="reveal group relative overflow-hidden cursor-pointer rounded-2xl p-8 flex flex-col transition-all duration-300 hover:-translate-y-2"
                   style={{
                     background: 'linear-gradient(145deg, #1e1b4b 0%, #2563EB 50%, #7C3AED 100%)',
-                    border: `1.5px solid ${isHot ? 'rgba(233,30,140,0.70)' : 'rgba(255,255,255,0.08)'}`,
+                    border: `1.5px solid ${isHot ? 'rgba(168,85,247,0.70)' : 'rgba(255,255,255,0.08)'}`,
                     boxShadow: isHot
-                      ? '0 0 0 4px rgba(233,30,140,0.12), 0 20px 48px rgba(233,30,140,0.28)'
+                      ? '0 0 0 4px rgba(124,58,237,0.14), 0 20px 48px rgba(37,99,235,0.24)'
                       : '0 4px 24px rgba(30,27,75,0.22)',
                     transitionDelay: `${i * 60}ms`,
                     transition: 'border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease',
@@ -372,9 +372,9 @@ export default function Services() {
                     ))}
                   </div>
 
-                  {/* Learn more — always pink */}
+                  {/* Learn more */}
                   <div className="flex items-center gap-1.5 text-sm font-bold"
-                       style={{ color: '#E91E8C', transition: 'gap 0.2s' }}>
+                       style={{ color: '#DDD6FE', transition: 'gap 0.2s' }}>
                     <ArrowUpRight className="w-4 h-4" />
                     Learn more
                   </div>
@@ -382,7 +382,7 @@ export default function Services() {
                   {/* Bottom accent line — slides in on hover */}
                   <div className="absolute bottom-0 left-0 right-0 h-[3px] rounded-b-2xl"
                        style={{
-                         background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)',
+                         background: 'linear-gradient(90deg, #2563EB, #7C3AED, #A855F7)',
                          opacity: isHot ? 1 : 0,
                          transform: isHot ? 'scaleX(1)' : 'scaleX(0)',
                          transformOrigin: 'left',

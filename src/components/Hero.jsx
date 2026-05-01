@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, Clock, Headphones, Layers, Sparkles } from 'lucide-react'
 
 const skyStyle = {
   background: `linear-gradient(
@@ -16,10 +16,10 @@ const skyStyle = {
 }
 
 const stats = [
-  { n: '6',      l: 'Core Services'        },
-  { n: '24 hrs', l: 'Response Guarantee'   },
-  { n: 'Free',   l: 'Discovery Sprint'     },
-  { n: '100%',   l: 'Post-Launch Support'  },
+  { icon: Layers,     n: '6',      l: 'Core Services'        },
+  { icon: Clock,      n: '24 hrs', l: 'Response Guarantee'   },
+  { icon: Sparkles,   n: 'Free',   l: 'Discovery Sprint'     },
+  { icon: Headphones, n: '100%',   l: 'Post-Launch Support'  },
 ]
 
 export default function Hero() {
@@ -90,23 +90,27 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Stats — white card with pink left border accent */}
+        {/* Stats — solid white card, always readable */}
         <div className="inline-flex flex-wrap items-center justify-center
                         bg-white rounded-2xl shadow-xl overflow-hidden"
-             style={{ border: '1.5px solid rgba(233,30,140,0.15)' }}>
-          {/* Pink top accent bar */}
+             style={{ border: '1.5px solid rgba(37,99,235,0.16)' }}>
           <div className="w-full h-1 col-span-full"
-               style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }} />
-          {stats.map((s, i) => (
+               style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #A855F7)' }} />
+          {stats.map((s, i) => {
+            const Icon = s.icon
+            return (
             <div key={s.n}
-                 className="px-8 py-5 text-center"
-                 style={{ borderRight: i < stats.length - 1 ? '1px solid #f1e8f5' : 'none' }}>
+                 className="px-7 py-5 text-center"
+                 style={{ borderRight: i < stats.length - 1 ? '1px solid #ede9fe' : 'none' }}>
+              <div className="mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-xl bg-brand-50">
+                <Icon className="h-[18px] w-[18px] text-brand-600" />
+              </div>
               <div className="text-3xl font-black leading-none mb-1" style={{ color: '#2563EB' }}>
                 {s.n}
               </div>
               <div className="text-xs text-slate-500 font-semibold">{s.l}</div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
 

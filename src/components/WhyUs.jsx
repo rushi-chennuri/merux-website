@@ -55,31 +55,31 @@ const features = [
     icon:  Target,
     title: 'Business-First Approach',
     desc:  'Every technical decision begins with your business goals. We translate objectives into the right tech solutions.',
-    color: 'text-sky-600', bg: 'bg-sky-50',
+    color: 'text-purple-600', bg: 'bg-purple-50',
   },
   {
     icon:  Users,
     title: 'Dedicated Expert Team',
     desc:  'One cohesive team, start to finish. No handoffs, no miscommunication — focused, consistent execution.',
-    color: 'text-emerald-600', bg: 'bg-emerald-50',
+    color: 'text-brand-600', bg: 'bg-brand-50',
   },
   {
     icon:  Clock,
     title: 'On-Time, On-Budget',
     desc:  'Transparent timelines, honest updates and zero surprises. We set realistic expectations and we meet them.',
-    color: 'text-amber-600', bg: 'bg-amber-50',
+    color: 'text-purple-600', bg: 'bg-purple-50',
   },
   {
     icon:  ShieldCheck,
     title: 'Enterprise-Grade Security',
     desc:  "Security-first development practices in everything we build. Your customers' data is always protected.",
-    color: 'text-rose-600', bg: 'bg-rose-50',
+    color: 'text-brand-600', bg: 'bg-brand-50',
   },
   {
     icon:  TrendingUp,
     title: 'Built to Scale',
     desc:  'Architecture designed for growth. As your business scales, your technology scales effortlessly alongside it.',
-    color: 'text-cyan-600', bg: 'bg-cyan-50',
+    color: 'text-purple-600', bg: 'bg-purple-50',
   },
 ]
 

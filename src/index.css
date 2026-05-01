@@ -20,17 +20,17 @@
 
 @layer components {
 
-  /* ── Gradient text (blue → purple → pink) ── */
+  /* ── Gradient text (blue → purple) ── */
   .gradient-text {
-    background: linear-gradient(90deg, #2563EB 0%, #7C3AED 55%, #E91E8C 100%);
+    @apply bg-gradient-to-r from-brand-600 via-purple-500 to-purple-400;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* ── Brand gradient bg (blue → purple → pink) ── */
+  /* ── Brand gradient bg (blue → purple) ── */
   .brand-gradient {
-    background: linear-gradient(-45deg, #1D4ED8, #7C3AED, #E91E8C, #A855F7);
+    background: linear-gradient(-45deg, #1D4ED8, #2563EB, #7C3AED, #A855F7);
     background-size: 400% 400%;
     animation: gradientShift 6s ease infinite;
   }
@@ -61,21 +61,8 @@
            transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-brand-200;
   }
 
-  /* ── Primary button — hot pink/magenta (Cotiviti-style CTA) ── */
+  /* ── Primary button ── */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 font-bold text-white
-           rounded-full
-           transition-all duration-300 hover:-translate-y-0.5;
-    background: #E91E8C;
-    box-shadow: 0 4px 20px rgba(233,30,140,0.30);
-  }
-  .btn-primary:hover {
-    background: #C8006F;
-    box-shadow: 0 8px 32px rgba(233,30,140,0.45);
-  }
-
-  /* ── Blue button — for secondary CTAs ── */
-  .btn-blue {
     @apply inline-flex items-center justify-center gap-2 font-bold text-white
            bg-brand-600 rounded-full
            transition-all duration-300 hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-brand;
@@ -83,31 +70,23 @@
 
   /* ── Outline button ── */
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 font-bold
-           border-2 rounded-full bg-transparent
-           transition-all duration-300 hover:-translate-y-0.5;
-    color: #E91E8C;
-    border-color: #E91E8C;
-  }
-  .btn-outline:hover {
-    background: #E91E8C;
-    color: white;
+    @apply inline-flex items-center justify-center gap-2 font-bold text-brand-600
+           border-2 border-brand-600 rounded-full bg-transparent
+           transition-all duration-300 hover:bg-brand-600 hover:text-white hover:-translate-y-0.5;
   }
 
   /* ── Section pill ── */
   .section-pill {
-    @apply inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full border;
-    background: #F5F3FF;
-    color: #7C3AED;
-    border-color: #C4B5FD;
+    @apply inline-flex items-center gap-2 bg-brand-50 text-brand-600
+           text-xs font-bold px-4 py-1.5 rounded-full border border-brand-200;
   }
 
-  /* ── Accent link (hot-pink, Cotiviti "Learn more" style) ── */
+  /* ── Accent link ── */
   .link-accent {
     @apply font-bold underline underline-offset-2 transition-colors duration-200;
-    color: #E91E8C;
+    color: #2563EB;
   }
-  .link-accent:hover { color: #C8006F; }
+  .link-accent:hover { color: #7C3AED; }
 
   /* ── Form input ── */
   .form-field {

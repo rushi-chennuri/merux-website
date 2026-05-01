@@ -26,20 +26,20 @@ const steps = [
     icon:  GitMerge,
     title: 'Integrate',
     desc:  'We seamlessly connect your systems, configure third-party integrations, and deploy to production with zero downtime.',
-    color: 'text-cyan-600',
-    bg:    'bg-cyan-50',
-    ring:  'ring-cyan-200',
-    grad:  'from-cyan-500 to-teal-500',
+    color: 'text-brand-600',
+    bg:    'bg-brand-50',
+    ring:  'ring-brand-200',
+    grad:  'from-brand-500 to-purple-500',
   },
   {
     num:   '04',
     icon:  RefreshCw,
     title: 'Maintain',
     desc:  'Continuous support, performance optimisation and feature development ensure your product keeps improving — always.',
-    color: 'text-emerald-600',
-    bg:    'bg-emerald-50',
-    ring:  'ring-emerald-200',
-    grad:  'from-emerald-500 to-green-500',
+    color: 'text-purple-600',
+    bg:    'bg-purple-50',
+    ring:  'ring-purple-200',
+    grad:  'from-purple-500 to-brand-500',
   },
 ]
 
@@ -68,7 +68,7 @@ export default function Process() {
           {/* Connector line — desktop only */}
           <div
             className="hidden xl:block absolute top-[28px] left-[calc(12.5%+16px)] right-[calc(12.5%+16px)] h-px"
-            style={{ background: 'linear-gradient(90deg, #818CF8, #A78BFA, #06B6D4, #10B981)' }}
+            style={{ background: 'linear-gradient(90deg, #2563EB, #818CF8, #7C3AED, #A855F7)' }}
           />
 
           {steps.map((s, i) => {

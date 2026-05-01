@@ -25,7 +25,7 @@ const testimonials = [
     role:   'COO, RetailEdge Group',
     avatar: 'JO',
     stars:  5,
-    grad:   'from-emerald-500 to-teal-500',
+    grad:   'from-brand-500 to-purple-600',
     badge:  'AI Chatbot + Support',
     text:   "The AI chatbot Orbix built handles 80% of our customer queries automatically, and the human handover is seamless. What impressed us most was the commitment beyond launch. They didn't disappear — they tracked performance, suggested improvements, and continue to iterate. That is real partnership.",
   },
@@ -33,8 +33,8 @@ const testimonials = [
 
 const badges = [
   { icon: ShieldCheck, label: 'Enterprise Security',   color: 'text-brand-600',   bg: 'bg-brand-50'   },
-  { icon: Zap,         label: 'Fast Delivery',          color: 'text-amber-600',   bg: 'bg-amber-50'   },
-  { icon: Users,       label: 'Dedicated Team',         color: 'text-emerald-600', bg: 'bg-emerald-50' },
+  { icon: Zap,         label: 'Fast Delivery',          color: 'text-purple-600',  bg: 'bg-purple-50'  },
+  { icon: Users,       label: 'Dedicated Team',         color: 'text-brand-600',   bg: 'bg-brand-50'   },
   { icon: ThumbsUp,    label: '100% Satisfaction',      color: 'text-violet-600',  bg: 'bg-violet-50'  },
 ]
 
@@ -76,7 +76,7 @@ export default function Testimonials() {
               <div className="flex items-center justify-between mb-5">
                 <div className="flex gap-1">
                   {Array(t.stars).fill(0).map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <Star key={j} className="w-4 h-4 fill-purple-400 text-purple-400" />
                   ))}
                 </div>
                 <span className="text-[10px] font-bold bg-brand-50 text-brand-600 px-2.5 py-1 rounded-full border border-brand-200">

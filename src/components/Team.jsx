@@ -16,7 +16,7 @@ const team = [
     bio:    'PhD in Machine Learning from IIT. Priya architects our AI integration solutions — from fine-tuned LLMs to real-time prediction pipelines.',
     skills: ['LLMs', 'Python', 'LangChain', 'Data Science'],
     initials: 'PS',
-    grad:   'from-emerald-500 to-teal-500',
+    grad:   'from-brand-500 to-purple-500',
     social: { linkedin: '#', twitter: '#', github: '#' },
   },
   {
@@ -34,7 +34,7 @@ const team = [
     bio:    'Sara turns complex requirements into beautiful, intuitive interfaces. Her designs consistently achieve sub-3-second task completion times in user testing.',
     skills: ['Figma', 'Design Systems', 'User Research'],
     initials: 'SC',
-    grad:   'from-rose-500 to-pink-500',
+    grad:   'from-purple-500 to-brand-500',
     social: { linkedin: '#', twitter: '#', github: '#' },
   },
   {
@@ -43,7 +43,7 @@ const team = [
     bio:    "Marcus is our go-to for high-throughput backend systems. He's shipped APIs handling over 50M requests per month across three continents.",
     skills: ['Node.js', 'PostgreSQL', 'AWS', 'Redis'],
     initials: 'MJ',
-    grad:   'from-amber-500 to-orange-500',
+    grad:   'from-brand-600 to-purple-600',
     social: { linkedin: '#', twitter: '#', github: '#' },
   },
   {
@@ -52,7 +52,7 @@ const team = [
     bio:    'Nina keeps everything running — zero-downtime deployments, autoscaling infrastructure, and security hardening across AWS and GCP environments.',
     skills: ['AWS', 'Terraform', 'Kubernetes', 'CI/CD'],
     initials: 'NP',
-    grad:   'from-cyan-500 to-sky-500',
+    grad:   'from-purple-500 to-brand-600',
     social: { linkedin: '#', twitter: '#', github: '#' },
   },
 ]

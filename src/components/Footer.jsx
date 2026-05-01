@@ -43,10 +43,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-xl border flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200"
-                  style={{ background: 'rgba(255,255,255,0.07)', borderColor: 'rgba(255,255,255,0.12)' }}
-                  onMouseEnter={e => { e.currentTarget.style.background='#E91E8C'; e.currentTarget.style.borderColor='#E91E8C' }}
-                  onMouseLeave={e => { e.currentTarget.style.background='rgba(255,255,255,0.07)'; e.currentTarget.style.borderColor='rgba(255,255,255,0.12)' }}
+                  className="w-9 h-9 rounded-xl border border-white/10 bg-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-brand-600 hover:border-brand-500 transition-all duration-200"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -117,9 +114,7 @@ export default function Footer() {
                 />
                 <button
                   className="text-white px-3 py-2 rounded-xl text-xs font-bold transition-all duration-200 flex-shrink-0 hover:-translate-y-0.5"
-                  style={{ background: '#E91E8C', boxShadow: '0 4px 14px rgba(233,30,140,0.40)' }}
-                  onMouseEnter={e => e.currentTarget.style.background='#C8006F'}
-                  onMouseLeave={e => e.currentTarget.style.background='#E91E8C'}
+                  style={{ background: '#2563EB', boxShadow: '0 4px 14px rgba(37,99,235,0.32)' }}
                 >
                   Join
                 </button>

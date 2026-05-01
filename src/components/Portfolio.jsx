@@ -29,7 +29,7 @@ const projects = [
     bg:       'bg-violet-50',
     tags:     ['React Native', 'Expo', 'Firebase', 'HL7 FHIR', 'Push Notifications'],
     results: [
-      { icon: TrendingUp, stat: '4.8★',  label: 'App Store rating'       },
+      { icon: TrendingUp, stat: '4.8/5', label: 'App Store rating'       },
       { icon: Users,      stat: '5k+',   label: 'Patient downloads'       },
       { icon: Clock,      stat: '12 wk', label: 'End-to-end timeline'     },
     ],
@@ -40,8 +40,8 @@ const projects = [
     title:    'SupportBot — AI Help Desk',
     desc:     'Custom GPT-4 chatbot trained on 3 years of support tickets. Handles 70% of incoming queries autonomously, with smart escalation to human agents for complex cases.',
     image:    null,
-    color:    'from-emerald-500 to-teal-500',
-    bg:       'bg-emerald-50',
+    color:    'from-brand-500 to-purple-600',
+    bg:       'bg-brand-50',
     tags:     ['GPT-4', 'LangChain', 'Python', 'Zendesk API', 'Pinecone'],
     results: [
       { icon: TrendingUp, stat: '70%',  label: 'Queries resolved by AI'  },

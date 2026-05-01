@@ -1,4 +1,4 @@
-import { Check, ArrowRight } from 'lucide-react'
+import { BadgeCheck, Check, ArrowRight } from 'lucide-react'
 
 const plans = [
   {
@@ -67,7 +67,8 @@ export default function Pricing() {
               >
                 {p.hi && (
                   <div className="inline-flex items-center gap-1.5 bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-5">
-                    ⭐ Most Popular
+                    <BadgeCheck className="w-3.5 h-3.5" />
+                    Most Popular
                   </div>
                 )}
 
