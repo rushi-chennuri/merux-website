@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans bg-white text-slate-900;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+
+  /* ── Gradient text (blue → purple → pink) ── */
+  .gradient-text {
+    background: linear-gradient(90deg, #2563EB 0%, #7C3AED 55%, #E91E8C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Brand gradient bg (blue → purple → pink) ── */
+  .brand-gradient {
+    background: linear-gradient(-45deg, #1D4ED8, #7C3AED, #E91E8C, #A855F7);
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease infinite;
+  }
+
+  /* ── Scroll-triggered fade-up ── */
+  .reveal {
+    @apply opacity-0 translate-y-6;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* ── Glass card ── */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-xl border border-white/30 rounded-2xl;
+  }
+
+  /* ── Service card ── */
+  .service-card {
+    @apply bg-white rounded-2xl border border-slate-200 p-7 cursor-default
+           transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover hover:border-brand-200;
+  }
+
+  /* ── Feature card ── */
+  .feature-card {
+    @apply bg-white rounded-xl border border-slate-200 p-5 cursor-default
+           transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-brand-200;
+  }
+
+  /* ── Primary button — hot pink/magenta (Cotiviti-style CTA) ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 font-bold text-white
+           rounded-full
+           transition-all duration-300 hover:-translate-y-0.5;
+    background: #E91E8C;
+    box-shadow: 0 4px 20px rgba(233,30,140,0.30);
+  }
+  .btn-primary:hover {
+    background: #C8006F;
+    box-shadow: 0 8px 32px rgba(233,30,140,0.45);
+  }
+
+  /* ── Blue button — for secondary CTAs ── */
+  .btn-blue {
+    @apply inline-flex items-center justify-center gap-2 font-bold text-white
+           bg-brand-600 rounded-full
+           transition-all duration-300 hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-brand;
+  }
+
+  /* ── Outline button ── */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 font-bold
+           border-2 rounded-full bg-transparent
+           transition-all duration-300 hover:-translate-y-0.5;
+    color: #E91E8C;
+    border-color: #E91E8C;
+  }
+  .btn-outline:hover {
+    background: #E91E8C;
+    color: white;
+  }
+
+  /* ── Section pill ── */
+  .section-pill {
+    @apply inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full border;
+    background: #F5F3FF;
+    color: #7C3AED;
+    border-color: #C4B5FD;
+  }
+
+  /* ── Accent link (hot-pink, Cotiviti "Learn more" style) ── */
+  .link-accent {
+    @apply font-bold underline underline-offset-2 transition-colors duration-200;
+    color: #E91E8C;
+  }
+  .link-accent:hover { color: #C8006F; }
+
+  /* ── Form input ── */
+  .form-field {
+    @apply w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm
+           text-slate-900 placeholder-slate-400 font-medium
+           transition-all duration-200 outline-none
+           focus:border-brand-500 focus:ring focus:ring-brand-100 focus:bg-white;
+  }
+
+  /* ── Tag ── */
+  .tag {
+    @apply text-xs font-semibold px-2.5 py-0.5 rounded-full
+           bg-slate-100 text-slate-500 border border-slate-200;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  .shimmer {
+    background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
