@@ -283,31 +283,46 @@ function ServiceModal({ svc, onClose }) {
    SERVICES SECTION
 ───────────────────────────────────────────────────────── */
 export default function Services() {
-  const [active,   setActive]   = useState(null)
-  const [hovered,  setHovered]  = useState(null)
-
-  const defaultBg = 'linear-gradient(145deg, #1e1b4b 0%, #2563EB 50%, #7C3AED 100%)'
+  const [active,  setActive]  = useState(null)
+  const [hovered, setHovered] = useState(null)
 
   return (
     <>
       <section id="services" className="pt-12 pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Header */}
+          {/* ── Header ── */}
           <div className="text-center mb-16 reveal">
-            <div className="section-pill mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block" />
+
+            {/* Pill with gradient border */}
+            <div className="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-5"
+                 style={{
+                   background: 'white',
+                   color: '#7C3AED',
+                   border: '1.5px solid transparent',
+                   backgroundClip: 'padding-box',
+                   boxShadow: '0 0 0 1.5px #E91E8C',
+                 }}>
+              <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#E91E8C' }} />
               What We Offer
             </div>
-            <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
+
+            <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-3">
               Our <span className="gradient-text">Services</span>
             </h2>
+
+            {/* Gradient underline accent */}
+            <div className="flex justify-center mb-5">
+              <div className="h-1 w-20 rounded-full"
+                   style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }} />
+            </div>
+
             <p className="text-slate-500 text-lg max-w-xl mx-auto">
               Every technology need your business has — covered end-to-end, from day one to beyond launch.
             </p>
           </div>
 
-          {/* Grid */}
+          {/* ── Grid ── */}
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {services.map((s, i) => {
               const Icon = s.icon
@@ -315,63 +330,64 @@ export default function Services() {
               return (
                 <div
                   key={s.title}
-                  className="reveal group relative overflow-hidden cursor-pointer rounded-2xl p-8
-                             transition-all duration-300 hover:-translate-y-2"
+                  className="reveal group relative overflow-hidden cursor-pointer rounded-2xl p-8 flex flex-col"
                   style={{
-                    background: defaultBg,
+                    background: 'linear-gradient(145deg, #1e1b4b 0%, #2563EB 50%, #7C3AED 100%)',
+                    border: `1.5px solid ${isHot ? 'rgba(233,30,140,0.70)' : 'rgba(255,255,255,0.08)'}`,
                     boxShadow: isHot
-                      ? '0 20px 48px rgba(233,30,140,0.40), 0 4px 12px rgba(0,0,0,0.08)'
-                      : '0 4px 20px rgba(30,27,75,0.20)',
+                      ? '0 0 0 4px rgba(233,30,140,0.12), 0 20px 48px rgba(233,30,140,0.28)'
+                      : '0 4px 24px rgba(30,27,75,0.22)',
                     transitionDelay: `${i * 60}ms`,
-                    transition: 'box-shadow 0.45s ease, transform 0.3s ease',
+                    transition: 'border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease',
                   }}
                   onClick={() => setActive(s)}
                   onMouseEnter={() => setHovered(i)}
                   onMouseLeave={() => setHovered(null)}
                 >
-                  {/* Pink overlay — fades in on hover for smooth colour transition */}
-                  <div
-                    className="absolute inset-0 rounded-2xl pointer-events-none"
-                    style={{
-                      background: '#E91E8C',
-                      opacity: isHot ? 1 : 0,
-                      transition: 'opacity 0.45s ease',
-                    }}
-                  />
-
-                  {/* Icon */}
-                  <div className="relative w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-white" strokeWidth={2} />
+                  {/* ── Icon — service-specific gradient ── */}
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 flex-shrink-0
+                                   bg-gradient-to-br ${s.grad}`}
+                       style={{ boxShadow: '0 4px 14px rgba(0,0,0,0.25)' }}>
+                    <Icon className="w-7 h-7 text-white" strokeWidth={1.75} />
                   </div>
 
                   {/* Title */}
-                  <h3 className="relative text-xl font-black text-white mb-3">{s.title}</h3>
+                  <h3 className="text-xl font-black text-white mb-3">{s.title}</h3>
 
                   {/* Description */}
-                  <p className="relative text-sm leading-relaxed mb-6 text-white/80">{s.short}</p>
+                  <p className="text-sm leading-relaxed mb-6 text-white/75 flex-1">{s.short}</p>
 
                   {/* Tags */}
-                  <div className="relative flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {s.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs font-semibold px-2.5 py-0.5 rounded-full border"
-                        style={{
-                          background: 'rgba(255,255,255,0.15)',
-                          color: 'white',
-                          borderColor: 'rgba(255,255,255,0.25)',
-                        }}
-                      >
+                      <span key={t}
+                            className="text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                            style={{
+                              background: 'rgba(255,255,255,0.10)',
+                              color: 'rgba(255,255,255,0.80)',
+                              border: '1px solid rgba(255,255,255,0.18)',
+                            }}>
                         {t}
                       </span>
                     ))}
                   </div>
 
-                  {/* Learn more */}
-                  <div className="relative flex items-center gap-2 text-white text-sm font-bold underline underline-offset-2">
+                  {/* Learn more — always pink */}
+                  <div className="flex items-center gap-1.5 text-sm font-bold"
+                       style={{ color: '#E91E8C', transition: 'gap 0.2s' }}>
                     <ArrowUpRight className="w-4 h-4" />
                     Learn more
                   </div>
+
+                  {/* Bottom accent line — slides in on hover */}
+                  <div className="absolute bottom-0 left-0 right-0 h-[3px] rounded-b-2xl"
+                       style={{
+                         background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)',
+                         opacity: isHot ? 1 : 0,
+                         transform: isHot ? 'scaleX(1)' : 'scaleX(0)',
+                         transformOrigin: 'left',
+                         transition: 'opacity 0.4s ease, transform 0.4s ease',
+                       }} />
                 </div>
               )
             })}
