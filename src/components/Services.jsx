@@ -283,11 +283,14 @@ function ServiceModal({ svc, onClose }) {
    SERVICES SECTION
 ───────────────────────────────────────────────────────── */
 export default function Services() {
-  const [active, setActive] = useState(null)
+  const [active,   setActive]   = useState(null)
+  const [hovered,  setHovered]  = useState(null)
+
+  const defaultBg = 'linear-gradient(145deg, #1e1b4b 0%, #2563EB 50%, #7C3AED 100%)'
 
   return (
     <>
-      <section id="services" className="py-24 bg-white">
+      <section id="services" className="pt-12 pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header */}
@@ -308,35 +311,56 @@ export default function Services() {
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
             {services.map((s, i) => {
               const Icon = s.icon
+              const isHot = hovered === i
               return (
                 <div
                   key={s.title}
                   className="reveal group relative overflow-hidden cursor-pointer rounded-2xl p-8
-                             transition-all duration-300 hover:-translate-y-2 hover:shadow-navy"
+                             transition-all duration-300 hover:-translate-y-2"
                   style={{
-                    background: 'linear-gradient(145deg, #1e1b4b 0%, #2563EB 50%, #7C3AED 100%)',
+                    background: defaultBg,
+                    boxShadow: isHot
+                      ? '0 20px 48px rgba(233,30,140,0.40), 0 4px 12px rgba(0,0,0,0.08)'
+                      : '0 4px 20px rgba(30,27,75,0.20)',
                     transitionDelay: `${i * 60}ms`,
+                    transition: 'box-shadow 0.45s ease, transform 0.3s ease',
                   }}
                   onClick={() => setActive(s)}
+                  onMouseEnter={() => setHovered(i)}
+                  onMouseLeave={() => setHovered(null)}
                 >
+                  {/* Pink overlay — fades in on hover for smooth colour transition */}
+                  <div
+                    className="absolute inset-0 rounded-2xl pointer-events-none"
+                    style={{
+                      background: '#E91E8C',
+                      opacity: isHot ? 1 : 0,
+                      transition: 'opacity 0.45s ease',
+                    }}
+                  />
+
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-6">
+                  <div className="relative w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-6">
                     <Icon className="w-6 h-6 text-white" strokeWidth={2} />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-black text-white mb-3">{s.title}</h3>
+                  <h3 className="relative text-xl font-black text-white mb-3">{s.title}</h3>
 
                   {/* Description */}
-                  <p className="text-purple-200 text-sm leading-relaxed mb-6">{s.short}</p>
+                  <p className="relative text-sm leading-relaxed mb-6 text-white/80">{s.short}</p>
 
-                  {/* Tags — subtle on dark bg */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  {/* Tags */}
+                  <div className="relative flex flex-wrap gap-2 mb-6">
                     {s.tags.map((t) => (
                       <span
                         key={t}
-                        className="text-xs font-semibold px-2.5 py-0.5 rounded-full
-                                   bg-white/10 text-purple-200 border border-white/15"
+                        className="text-xs font-semibold px-2.5 py-0.5 rounded-full border"
+                        style={{
+                          background: 'rgba(255,255,255,0.15)',
+                          color: 'white',
+                          borderColor: 'rgba(255,255,255,0.25)',
+                        }}
                       >
                         {t}
                       </span>
@@ -344,16 +368,10 @@ export default function Services() {
                   </div>
 
                   {/* Learn more */}
-                  <div className="flex items-center gap-1.5 text-white text-sm font-bold
-                                  group-hover:gap-3 transition-all duration-200">
+                  <div className="relative flex items-center gap-2 text-white text-sm font-bold underline underline-offset-2">
                     <ArrowUpRight className="w-4 h-4" />
                     Learn more
                   </div>
-
-                  {/* Subtle corner glow on hover */}
-                  <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full
-                                  bg-blue-400/10 group-hover:bg-blue-400/20
-                                  transition-all duration-500 pointer-events-none" />
                 </div>
               )
             })}

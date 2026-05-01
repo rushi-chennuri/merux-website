@@ -38,7 +38,7 @@ export default function Hero() {
       {/* Content */}
       <div
         className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        style={{ paddingTop: '130px', paddingBottom: '80px' }}
+        style={{ paddingTop: '130px', paddingBottom: '40px' }}
       >
 
         {/* Eyebrow pill */}
@@ -90,12 +90,20 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Stats — solid white card, always readable */}
+        {/* Stats — white card with pink left border accent */}
         <div className="inline-flex flex-wrap items-center justify-center
-                        bg-white rounded-2xl shadow-xl divide-x divide-slate-100">
-          {stats.map((s) => (
-            <div key={s.n} className="px-8 py-5 text-center">
-              <div className="text-3xl font-black text-brand-700 leading-none mb-1">{s.n}</div>
+                        bg-white rounded-2xl shadow-xl overflow-hidden"
+             style={{ border: '1.5px solid rgba(233,30,140,0.15)' }}>
+          {/* Pink top accent bar */}
+          <div className="w-full h-1 col-span-full"
+               style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }} />
+          {stats.map((s, i) => (
+            <div key={s.n}
+                 className="px-8 py-5 text-center"
+                 style={{ borderRight: i < stats.length - 1 ? '1px solid #f1e8f5' : 'none' }}>
+              <div className="text-3xl font-black leading-none mb-1" style={{ color: '#2563EB' }}>
+                {s.n}
+              </div>
               <div className="text-xs text-slate-500 font-semibold">{s.l}</div>
             </div>
           ))}
@@ -104,7 +112,7 @@ export default function Hero() {
 
       {/* Bottom fade into white */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none"
         style={{ background: 'linear-gradient(to bottom, transparent, white)' }}
       />
 
