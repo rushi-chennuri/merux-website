@@ -20,19 +20,12 @@ export default function Logo({ size = 42, dark = false, iconOnly = false }) {
   const font     = '"Arial Black", Arial, sans-serif'
 
   const Badge = () => (
-    <div
-      role="img"
-      aria-label="MERUX"
-      style={{
-        width: size,
-        height: size,
-        flexShrink: 0,
-        backgroundImage: 'url(/mr-logo.png)',
-        backgroundSize: '138%',       /* zoom past the white border */
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        borderRadius: size * 0.22,    /* match the logo's own corner radius */
-      }}
+    <img
+      src="/mr-logo.png"
+      alt="MERUX"
+      width={size}
+      height={size}
+      style={{ display: 'block', flexShrink: 0 }}
     />
   )
 
