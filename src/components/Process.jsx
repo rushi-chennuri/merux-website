@@ -50,13 +50,17 @@ export default function Process() {
 
         {/* Header */}
         <div className="text-center mb-16 reveal">
-          <div className="section-pill mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block" />
+          <div className="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-5"
+               style={{ background: 'white', color: '#7C3AED', boxShadow: '0 0 0 1.5px #E91E8C' }}>
+            <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#E91E8C' }} />
             How It Works
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-3">
             Our <span className="gradient-text">4-Step Process</span>
           </h2>
+          <div className="flex justify-center mb-5">
+            <div className="h-1 w-20 rounded-full" style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }} />
+          </div>
           <p className="text-slate-500 text-lg max-w-md mx-auto">
             A proven journey from vision to reality — and beyond.
           </p>
@@ -68,7 +72,7 @@ export default function Process() {
           {/* Connector line — desktop only */}
           <div
             className="hidden xl:block absolute top-[28px] left-[calc(12.5%+16px)] right-[calc(12.5%+16px)] h-px"
-            style={{ background: 'linear-gradient(90deg, #2563EB, #818CF8, #7C3AED, #A855F7)' }}
+            style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }}
           />
 
           {steps.map((s, i) => {
@@ -108,7 +112,7 @@ export default function Process() {
         </div>
 
         {/* Bottom CTA banner */}
-        <div className="mt-16 rounded-2xl bg-gradient-to-r from-brand-600 via-violet-600 to-purple-600 p-px reveal">
+        <div className="mt-16 rounded-2xl p-px reveal" style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }}>
           <div className="bg-white rounded-[14px] p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-xl font-black text-slate-900 mb-1">Ready to start your project?</h3>

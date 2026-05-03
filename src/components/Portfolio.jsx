@@ -64,13 +64,17 @@ export default function Portfolio() {
 
         {/* Header */}
         <div className="text-center mb-12 reveal">
-          <div className="section-pill mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block" />
+          <div className="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-5"
+               style={{ background: 'white', color: '#7C3AED', boxShadow: '0 0 0 1.5px #E91E8C' }}>
+            <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#E91E8C' }} />
             Our Work
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-3">
             Projects We're <span className="gradient-text">Proud Of</span>
           </h2>
+          <div className="flex justify-center mb-5">
+            <div className="h-1 w-20 rounded-full" style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }} />
+          </div>
           <p className="text-slate-500 text-lg max-w-xl mx-auto">
             A snapshot of what we've built — each project delivered on time, on budget, and built to scale.
           </p>

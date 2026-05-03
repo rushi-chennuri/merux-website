@@ -37,13 +37,17 @@ export default function Pricing() {
 
         {/* Header */}
         <div className="text-center mb-16 reveal">
-          <div className="section-pill mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block" />
+          <div className="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-5"
+               style={{ background: 'white', color: '#7C3AED', boxShadow: '0 0 0 1.5px #E91E8C' }}>
+            <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#E91E8C' }} />
             Pricing
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-3">
             Transparent <span className="gradient-text">Pricing</span>
           </h2>
+          <div className="flex justify-center mb-5">
+            <div className="h-1 w-20 rounded-full" style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }} />
+          </div>
           <p className="text-slate-500 text-lg max-w-md mx-auto">
             No hidden fees. Every project is scoped and quoted around your specific goals.
           </p>
@@ -56,14 +60,15 @@ export default function Pricing() {
               key={p.name}
               className={`reveal rounded-2xl transition-all duration-300 ${
                 p.hi
-                  ? 'bg-gradient-to-br from-brand-600 via-violet-600 to-purple-700 text-white shadow-[0_24px_64px_rgba(99,102,241,0.35)] -mt-4 mb-0'
+                  ? 'text-white -mt-4 mb-0'
                   : 'bg-white border border-slate-200 hover:border-brand-300 hover:shadow-card-hover'
               }`}
               style={{ transitionDelay: `${i * 80}ms`, padding: p.hi ? 2 : 0 }}
             >
               {/* Inner card (for gradient border effect on highlighted plan) */}
               <div
-                className={`h-full rounded-[14px] p-8 ${p.hi ? 'bg-gradient-to-br from-brand-600 via-violet-600 to-purple-700' : ''}`}
+                className="h-full rounded-[14px] p-8"
+                style={p.hi ? { background: 'linear-gradient(145deg, #1D4ED8 0%, #7C3AED 55%, #E91E8C 100%)', boxShadow: '0 24px 64px rgba(233,30,140,0.28)' } : {}}
               >
                 {p.hi && (
                   <div className="inline-flex items-center gap-1.5 bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full mb-5">
@@ -111,11 +116,11 @@ export default function Pricing() {
                 {/* CTA */}
                 <a
                   href="#contact"
-                  className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200 ${
-                    p.hi
-                      ? 'bg-white text-brand-600 hover:bg-slate-50 shadow-lg'
-                      : 'bg-brand-600 text-white hover:bg-brand-700 shadow-brand'
-                  }`}
+                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-sm transition-all duration-200"
+                  style={p.hi
+                    ? { background: 'white', color: '#E91E8C', boxShadow: '0 4px 14px rgba(0,0,0,0.12)' }
+                    : { background: '#E91E8C', color: 'white', boxShadow: '0 4px 14px rgba(233,30,140,0.35)' }
+                  }
                 >
                   {p.cta}
                   <ArrowRight className="w-4 h-4" />

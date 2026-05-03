@@ -27,8 +27,9 @@ export default function Contact() {
 
           {/* ── Left: info ── */}
           <div className="reveal">
-            <div className="section-pill mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block" />
+            <div className="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-6"
+                 style={{ background: 'white', color: '#7C3AED', boxShadow: '0 0 0 1.5px #E91E8C' }}>
+              <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#E91E8C' }} />
               Get in Touch
             </div>
 

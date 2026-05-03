@@ -91,9 +91,17 @@ export default function WhyUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center mb-14 reveal">
-            <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-4">
+            <div className="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-5"
+                 style={{ background: 'white', color: '#7C3AED', boxShadow: '0 0 0 1.5px #E91E8C' }}>
+              <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#E91E8C' }} />
+              Our Capabilities
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-black text-slate-900 mb-3">
               Here's what we can <span className="gradient-text">do for you</span>
             </h2>
+            <div className="flex justify-center mb-5">
+              <div className="h-1 w-20 rounded-full" style={{ background: 'linear-gradient(90deg, #2563EB, #7C3AED, #E91E8C)' }} />
+            </div>
             <p className="text-slate-500 text-lg max-w-xl mx-auto">
               MERUX helps you build, launch and scale products that users love — faster and with less risk.
             </p>
@@ -139,8 +147,9 @@ export default function WhyUs() {
 
             {/* Left: copy */}
             <div className="reveal">
-              <div className="section-pill mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-500 inline-block" />
+              <div className="inline-flex items-center gap-2 text-xs font-bold px-4 py-1.5 rounded-full mb-6"
+                   style={{ background: 'white', color: '#7C3AED', boxShadow: '0 0 0 1.5px #E91E8C' }}>
+                <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: '#E91E8C' }} />
                 Why MERUX
               </div>
               <h2 className="text-4xl sm:text-5xl font-black text-slate-900 leading-tight mb-6">
@@ -160,7 +169,7 @@ export default function WhyUs() {
                   'Flexible retainer model for ongoing partnership',
                 ].map((b) => (
                   <li key={b} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#E91E8C' }} />
                     <span className="text-slate-600 text-sm font-medium">{b}</span>
                   </li>
                 ))}
